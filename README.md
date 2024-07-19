@@ -237,7 +237,7 @@ class ImplListableForRecordObj<K extends string, V>
   static subtypeId = 'record-obj';
 
   list(): [K, V][] {
-    return Object.entries(this.v) as [K, V][];
+    return Object.entries(this.v.rec) as [K, V][];
   }
 }
 Listable.registerImpl(ImplListableForRecordObj);
