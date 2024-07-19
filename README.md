@@ -4,7 +4,7 @@
 
 ```ts
 // Protocol (like superclass)
-type Listable<T> = //...
+type Listable<T> = DefProtocolMarker</* ... */>;
 
 interface ListableImpl<T> {
   list(): T[];
