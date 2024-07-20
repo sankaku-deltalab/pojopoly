@@ -4,13 +4,13 @@
 
 ```ts
 // Protocol (like superclass)
-type Listable<T> = DefProtocolMarker</* ... */>;
+export type Listable<T> = DefProtocolMarker</* ... */>;
 
-interface ListableImpl<T> {
+export interface ListableImpl<T> {
   list(): T[];
 }
 
-namespace Listable {
+export namespace Listable {
   // ...
   export function list<T>(listable: Listable<T>): T[] {
     return v(listable).list();
@@ -20,7 +20,7 @@ namespace Listable {
 
 ```ts
 // Implementation (like subclass)
-type ArrayObj<T> = {
+export type ArrayObj<T> = {
   type: 'array-obj';
   ary: T[];
 } & Listable<T>;
@@ -34,7 +34,11 @@ class ImplListableForArrayObj<T> extends //...
   }
 }
 Listable.registerImpl(ImplListableForArrayObj);
+```
 
+```ts
+// Usage
+// NOTE: ArrayObj file must be already executed
 const aryObj = {type: "array-obj", ary: [1, 2, 3]};
 console.log(Listable.list(aryObj)); // [1, 2, 3]
 ```
