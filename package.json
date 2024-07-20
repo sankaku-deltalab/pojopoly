@@ -2,13 +2,31 @@
   "name": "pojopoly",
   "version": "0.1.0",
   "description": "A library for polymorphism with POJO object in TypeScript",
+  "author": {
+    "name": "Sankaku",
+    "email": "sankaku_dlt.45631@outlook.jp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sankaku-deltalab/pojopoly.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "files": [
     "build/src"
   ],
   "license": "Apache-2.0",
-  "keywords": [],
+  "keywords": [
+    "POJO",
+    "polymorphism",
+    "polymorphic",
+    "typescript",
+    "protocol oriented programming",
+    "dependency inversion"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "gts lint",
