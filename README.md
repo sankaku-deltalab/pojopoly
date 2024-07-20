@@ -10,6 +10,7 @@ export interface ListableImpl<T> {
   list(): T[];
 }
 
+// NOTE: This example use namespace but you have not to use.
 export namespace Listable {
   // ...
   export function list<T>(listable: Listable<T>): T[] {
