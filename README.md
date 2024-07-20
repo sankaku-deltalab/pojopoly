@@ -1,6 +1,6 @@
 # 🎩 Pojopoly
 
-**Pojopoly** realizes class like typed-polymorphism for POJO (Plain Old JavaScript Object).
+**Pojopoly** realizes class-like typed polymorphism for POJO (Plain Old JavaScript Object).
 
 ```ts
 // Protocol (like superclass)
@@ -41,8 +41,8 @@ console.log(Listable.list(aryObj)); // [1, 2, 3]
 
 ## When pojopoly is useful
 
-- When you have state but it contains only JSON serializable objects, and objects needs polymorphism (e.g. [Redux](https://redux.js.org)).
-- When you using POJO objects and you want to define functions with [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle).
+- When you have state but it contains only JSON-serializable objects, and these objects need polymorphism (e.g. [Redux](https://redux.js.org)).
+- When you are using POJO objects and you want to define functions with the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle).
 
 ## Example & Usage
 
