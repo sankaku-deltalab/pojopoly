@@ -43,10 +43,10 @@ const aryObj = {type: "array-obj", ary: [1, 2, 3]};
 console.log(Listable.list(aryObj)); // [1, 2, 3]
 ```
 
-## When pojopoly is useful
+## When to Use Pojopoly
 
-- When you have state but it contains only JSON-serializable objects, and these objects need polymorphism (e.g. [Redux](https://redux.js.org)).
-- When you are using POJO objects and you want to define functions with the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle).
+- You need polymorphism for state object that contain only JSON-serializable data, such as those used in [Redux](https://redux.js.org).
+- You want to define functions with the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) while working with POJO objects.
 
 ## Example & Usage
 
