@@ -4,7 +4,8 @@
 
 ```ts
 // Protocol (like superclass)
-export type Listable<T> = DefProtocolMarker</* ... */>;
+const [pKey, sKey] = [Symbol('MyApp.Listable'), 'type'];
+export type Listable<T> = DefProtocolMarker<typeof pKey, typeof sKey, [T]>;
 
 export interface ListableImpl<T> {
   list(): T[];
@@ -12,7 +13,8 @@ export interface ListableImpl<T> {
 
 // NOTE: This example use namespace but you have not to use.
 export namespace Listable {
-  // ...
+  // boilerplate code
+
   export function list<T>(listable: Listable<T>): T[] {
     return v(listable).list();
   }
@@ -40,7 +42,11 @@ Listable.registerImpl(ImplListableForArrayObj);
 ```ts
 // Usage
 // NOTE: ArrayObj file must be already executed
-const aryObj = {type: "array-obj", ary: [1, 2, 3]};
+const createArrayObj = <T>(items: T[]): ArrayObj<T> => ({
+  type: 'array-obj',
+  ary: items,
+});
+const aryObj = createArrayObj([1, 2, 3]);
 console.log(Listable.list(aryObj)); // [1, 2, 3]
 ```
 
